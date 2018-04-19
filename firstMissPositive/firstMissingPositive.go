@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// loop, put num > 0 and < size into correct spot in new array, check first value/spot not match element
+// Time O(n), space O(n)
 func firstMissingPositive(nums []int) int {
 	l := len(nums)
 	h := make([]int, l)
@@ -18,12 +20,10 @@ func firstMissingPositive(nums []int) int {
 	return l + 1
 }
 
-func main() {
-	v := []int{3, 4, -1, 1}
-	r := firstMissingPositive2(v)
-	fmt.Println(r)
-}
-
+// instead put into new array, now do swap.
+// 1. after swap, should re-check new value
+// 2. check if current spot value = swap value, skip it, otherwise it will go infinite loop
+// Time O(n), Space O(1)
 func firstMissingPositive2(nums []int) int {
 	l := len(nums)
 	for i := 0; i < l; {
@@ -40,4 +40,10 @@ func firstMissingPositive2(nums []int) int {
 		}
 	}
 	return l + 1
+}
+
+func main() {
+	v := []int{3, 4, -1, 1}
+	r := firstMissingPositive2(v)
+	fmt.Println(r)
 }
