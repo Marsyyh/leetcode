@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Get max range for each iteration, if end = max range means next step
 func main() {
 	test := makeRange(1, 25000)
 	res := jump(test)
@@ -9,20 +10,24 @@ func main() {
 }
 
 func jump(nums []int) int {
-	s := 0
-	e := 0
-	max := 0
+	s, e, max := 0, 0, 0
+	if len(nums) < 2 {
+		return 0
+	}
 	for i := 0; i < len(nums); i++ {
-		max = Max(max, i+nums[i])
+		max = twoValueMax(max, i+nums[i])
+		if max >= len(nums)-1 {
+			break
+		}
 		if i == e {
 			s++
 			e = max
 		}
 	}
-	return s
+	return s + 1
 }
 
-func Max(x, y int) int {
+func twoValueMax(x, y int) int {
 	if x > y {
 		return x
 	}
