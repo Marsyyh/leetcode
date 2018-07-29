@@ -1,13 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	test := []int{2, 7, 11, 15}
-	target := 9
-	res := twoSum(test, target)
-	fmt.Print(res)
-}
+package twoSum
 
 // Using Map, we can do it in O(n) time
 func twoSum(nums []int, target int) []int {
