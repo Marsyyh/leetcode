@@ -1,4 +1,4 @@
-package main
+package validateBinarySearchTree
 
 import (
 	"fmt"

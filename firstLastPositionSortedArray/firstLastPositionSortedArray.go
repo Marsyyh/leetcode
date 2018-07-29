@@ -1,13 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	test := []int{1}
-	target := 0
-	res := searchRange(test, target)
-	fmt.Print(res)
-}
+package firstLastPositionSortedArray
 
 // binary search left and right
 func searchRange(nums []int, target int) []int {

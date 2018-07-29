@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package firstMissPositive
 
 // loop, put num > 0 and < size into correct spot in new array, check first value/spot not match element
 // Time O(n), space O(n)
@@ -40,10 +38,4 @@ func firstMissingPositive2(nums []int) int {
 		}
 	}
 	return l + 1
-}
-
-func main() {
-	v := []int{3, 4, -1, 1}
-	r := firstMissingPositive2(v)
-	fmt.Println(r)
 }

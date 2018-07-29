@@ -1,17 +1,8 @@
-package main
+package findClosestElements
 
 import (
-	"fmt"
 	"sort"
 )
-
-func main() {
-	test := []int{0, 0, 1, 2, 3, 3, 4, 7, 7, 8}
-	k := 3
-	x := 5
-	result := findClosestElements(test, k, x)
-	fmt.Print(result)
-}
 
 // binary search find most close number
 // then i, j pointer move smallest abs
