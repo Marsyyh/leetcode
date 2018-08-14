@@ -1,17 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	test := [][]int{
-		{1, 3, 5, 7},
-		{10, 11, 16, 20},
-		{23, 30, 34, 50},
-	}
-	target := 2
-	res := searchMatrix(test, target)
-	fmt.Print(res)
-}
+package search2DMatrix1
 
 // for int[m][n], it's 1d index = len(int[0]) * n + m
 // for index, m = index % len(int[0])
