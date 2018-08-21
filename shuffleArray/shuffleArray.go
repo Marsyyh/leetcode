@@ -1,7 +1,6 @@
-package main
+package shuffleArray
 
 import (
-	"fmt"
 	"math/rand"
 )
 
@@ -12,7 +11,7 @@ type Solution struct {
 func Constructor(nums []int) Solution {
 	tmp := make([]int, len(nums))
 	copy(tmp, nums)
-	return Solution{tmp, nums}
+	return Solution{nums, tmp}
 }
 
 /** Resets the array to its original configuration and return it. */
@@ -27,13 +26,4 @@ func (this *Solution) Shuffle() []int {
 		this.nums[i], this.nums[index+i] = this.nums[index+i], this.nums[i]
 	}
 	return this.nums
-}
-
-func main() {
-	nums := []int{1, 2, 3, 4, 5}
-	obj := Constructor(nums)
-	param_2 := obj.Shuffle()
-	fmt.Println(param_2)
-	param_1 := obj.Reset()
-	fmt.Println(param_1)
 }

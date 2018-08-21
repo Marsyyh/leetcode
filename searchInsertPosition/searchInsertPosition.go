@@ -1,13 +1,4 @@
-package main
-
-import "fmt"
-
-func main() {
-	test := []int{1, 3, 5, 7}
-	target := 8
-	res := searchInsert(test, target)
-	fmt.Print(res)
-}
+package searchInsertPosition
 
 // Binary search
 // left <= right : left = mid + 1; right = mid - 1. Target one element in the last nums[mid] == target
