@@ -1,6 +1,9 @@
 package testHelper
 
-import "testing"
+import (
+	"sort"
+	"testing"
+)
 
 func AssertSliceEqual(a []int, b []int, t *testing.T) {
 	if a == nil && b != nil || a != nil && b == nil {
@@ -9,6 +12,24 @@ func AssertSliceEqual(a []int, b []int, t *testing.T) {
 	if len(a) != len(b) {
 		Fatal(a, b, t)
 	}
+	sort.Ints(a)
+	sort.Ints(b)
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
+			Fatal(a, b, t)
+		}
+	}
+}
+
+func AssertSliceStringEqual(a []string, b []string, t *testing.T) {
+	if a == nil && b != nil || a != nil && b == nil {
+		Fatal(a, b, t)
+	}
+	if len(a) != len(b) {
+		Fatal(a, b, t)
+	}
+	sort.Strings(a)
+	sort.Strings(b)
 	for i := 0; i < len(a); i++ {
 		if a[i] != b[i] {
 			Fatal(a, b, t)

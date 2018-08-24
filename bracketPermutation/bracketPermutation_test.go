@@ -8,5 +8,5 @@ import (
 
 func TestPermu(t *testing.T) {
 	expect := []string{"((()))", "(())()", "()()()", "()(())", "(()())"}
-	testHelper.AssertSliceEqual(Permu(3), expect, t)
+	testHelper.AssertSliceStringEqual(Permu(3), expect, t)
 }
