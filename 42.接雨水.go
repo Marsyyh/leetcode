@@ -5,8 +5,14 @@
  */
 
 // @lc code=start
-func trap(height []int) int {
+/*
 
+	[1,4,2,3]
+
+*/
+func trap(height []int) int {
+	f
 }
+
 // @lc code=end
 
